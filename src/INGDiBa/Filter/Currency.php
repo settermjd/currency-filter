@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace INGDiBa\Filter;
+namespace settermjd\INGDiBa\Filter;
 
 use Zend\Filter\Exception\InvalidArgumentException;
 use Zend\Filter\FilterInterface;
