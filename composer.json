@@ -28,12 +28,12 @@
   },
   "autoload": {
     "psr-4": {
-      "INGDiBa\\": "src/INGDiBa/"
+      "settermjd\\INGDiBa\\": "src/INGDiBa/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "INGDiBaTest\\": "test/INGDiBa/"
+      "settermjd\\INGDiBa\\Test\\": "test/INGDiBa/"
     }
   },
   "scripts": {

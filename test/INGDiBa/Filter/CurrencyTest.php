@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace INGDiBaTest\Filter;
+namespace settermjd\INGDiBa\Test\Filter;
 
-use INGDiBa\Filter\Currency;
+use settermjd\INGDiBa\Filter\Currency;
 use PHPUnit\Framework\TestCase;
 use Zend\Filter\Exception\InvalidArgumentException;
 
 /**
  * Class CurrencyTest
  * @package INGDiBaTest\Filter
- * @coversDefaultClass \INGDiBa\Filter\Currency
+ * @coversDefaultClass settermjd\INGDiBa\Filter\Currency
  */
 class CurrencyTest extends TestCase
 {
