@@ -29,6 +29,9 @@ class CurrencyTest extends TestCase
     public function dataProvider()
     {
        return [
+           ['-20,', -2000],
+           ['-20,2', -2020],
+           ['-20,21', -2021],
            ['1000,00', 100000],
            ['1234,4', 123440],
            ['1234,', 123400],

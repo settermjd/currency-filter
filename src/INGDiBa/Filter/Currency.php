@@ -16,7 +16,7 @@ use Zend\Filter\FilterInterface;
  * bank account.
  *
  * From the samples that I've seen, the currency values are written
- * in one of three forms:
+ * in one of three forms (both positive and negative:
  *
  * - 1234,21
  * - 1234,2
@@ -47,8 +47,8 @@ class Currency implements FilterInterface
             throw new InvalidArgumentException('Supplied currency value does not match the required format.');
         }
 
-        $integer = substr($value, 0, (strripos($value, self::SEPARATOR)));
-        $fraction = substr($value, (strripos($value, self::SEPARATOR) + 1));
+        $integer = substr($value, 0, (stripos($value, self::SEPARATOR)));
+        $fraction = substr($value, (stripos($value, self::SEPARATOR) + 1), 2);
 
         if (strlen($fraction) < 2) {
             $fraction = str_pad($fraction, 2, '0', STR_PAD_RIGHT);
