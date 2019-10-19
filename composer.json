@@ -1,8 +1,8 @@
 {
-  "name": "settermjd/ingdiba-currency-filter",
+  "name": "settermjd/currency-filter",
   "description": "A filter for the currency values in ING DiBa bank export files",
   "type": "project",
-  "homepage": "https://github.com/settermjd/ingdiba-currency-filter",
+  "homepage": "https://github.com/settermjd/currency-filter",
   "license": "BSD-3-Clause",
   "keywords": [
     "banking",
@@ -13,9 +13,9 @@
     "sort-packages": true
   },
   "support": {
-    "issues": "https://github.com/settermjd/indiba-currency-filter/issues",
-    "source": "https://github.com/settermjd/indiba-currency-filter",
-    "rss": "https://github.com/settermjd/indiba-currency-filter/releases.atom"
+    "issues": "https://github.com/settermjd/currency-filter/issues",
+    "source": "https://github.com/settermjd/currency-filter",
+    "rss": "https://github.com/settermjd/currency-filter/releases.atom"
   },
   "require": {
     "php": "^7.3",
@@ -30,12 +30,12 @@
   },
   "autoload": {
     "psr-4": {
-      "settermjd\\INGDiBa\\": "src/INGDiBa/"
+      "settermjd\\Filter\\": "src/Filter/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "settermjd\\INGDiBa\\Test\\": "test/INGDiBa/"
+      "settermjd\\Filter\\Test\\": "test/Filter/"
     }
   },
   "scripts": {
