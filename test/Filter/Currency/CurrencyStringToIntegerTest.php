@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace settermjd\Filter\Currency\Test\Currency;
 
-use settermjd\Filter\Currency\EuropeanCurrency;
+use settermjd\Filter\Currency\CurrencyStringToInteger;
 use PHPUnit\Framework\TestCase;
 use Zend\Filter\Exception\InvalidArgumentException;
 
 /**
- * Class EuropeanCurrencyTest
+ * Class CurrencyStringToIntegerTest
  * @package Filter\Currency\Test
- * @coversDefaultClass \settermjd\Filter\Currency\EuropeanCurrency
+ * @coversDefaultClass \settermjd\Filter\Currency\CurrencyStringToInteger
  */
-class EuropeanCurrencyTest extends TestCase
+class CurrencyStringToIntegerTest extends TestCase
 {
     /**
      * @param string $testData
@@ -22,7 +22,7 @@ class EuropeanCurrencyTest extends TestCase
      */
     public function testCanCorrectlyFilterInputData($testData, $validData)
     {
-        $filter = new EuropeanCurrency();
+        $filter = new CurrencyStringToInteger();
         $this->assertEquals($validData, $filter->filter($testData));
     }
 
@@ -58,7 +58,7 @@ class EuropeanCurrencyTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Supplied currency value does not match the required format.');
-        $filter = new EuropeanCurrency();
+        $filter = new CurrencyStringToInteger();
         $filter->filter($data);
     }
 

@@ -8,29 +8,39 @@ use Zend\Filter\Exception\InvalidArgumentException;
 use Zend\Filter\FilterInterface;
 
 /**
- * Class EuropeanCurrency
+ * Class CurrencyStringToInteger
  *
- * This class is designed to Filter and return the currency values
- * in CSV export files which the German bank, ING DiBa, creates
- * when a personal banking customer exports records from their
- * bank account.
+ * This class converts a European currency string to an integer.
+ * It can convert all the standard currency strings, a range of
+ * samples are available below, to an integer representation. This
+ * was largely motivated by having to use such strings with the
+ * money\money library.
  *
- * From the samples that I've seen, the currency values are written
- * in one of three forms (both positive and negative:
+ * Examples:
  *
- * - 1234,21
- * - 1234,2
- * - 1234,
- *
- * So far, even if there is no fractional/decimal amount available
- * for the transaction, the trailing decimal separator (,) is always
- * written in the amount. This class has been written to Filter based
- * on each of these formats. It has not been written to take account
- * of anything more custom.
+ * '-3.500,01'
+ * '-3500,00'
+ * '-4.501,2'
+ * '1,'
+ * '1,01'
+ * '1,2'
+ * '1.00,00'
+ * '1.887.761.234'
+ * '1.887.761.234,01'
+ * '1.887.761.234,2'
+ * '1000,00'
+ * '1234.24'
+ * '1887761234,'
+ * '1887761234,2'
+ * '1887761234,2'
+ * '1887761234,21'
+ * '20,21'
+ * '21,02'
+ * '21,2'
  *
  * @package Filter\Currency
  */
-class EuropeanCurrency implements FilterInterface
+class CurrencyStringToInteger implements FilterInterface
 {
     const SEPARATOR = ',';
     const PATTERN = '/^[-]?([\d]{1,3}[\.]?)+(,[\d]{0,2})?$/';
