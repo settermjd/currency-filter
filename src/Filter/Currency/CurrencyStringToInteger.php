@@ -66,7 +66,7 @@ class CurrencyStringToInteger implements FilterInterface
             $fraction = str_pad($fraction, 2, '0', STR_PAD_RIGHT);
         }
 
-        return str_replace('.', '', $integer) . $fraction;
+        return intval(str_replace('.', '', $integer) . $fraction);
     }
 
     /**
