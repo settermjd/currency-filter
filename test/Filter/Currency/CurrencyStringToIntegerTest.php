@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace settermjd\Filter\Currency\Test\Currency;
+namespace settermjd\Filter\Test\Currency;
 
 use settermjd\Filter\Currency\CurrencyStringToInteger;
 use PHPUnit\Framework\TestCase;
