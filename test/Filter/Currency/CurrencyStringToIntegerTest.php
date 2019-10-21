@@ -23,12 +23,14 @@ class CurrencyStringToIntegerTest extends TestCase
     public function testCanCorrectlyFilterInputData($testData, $validData)
     {
         $filter = new CurrencyStringToInteger();
-        $this->assertEquals($validData, $filter->filter($testData));
+        $this->assertSame($validData, $filter->filter($testData));
     }
 
     public function dataProvider()
     {
         return [
+            ['-0,55', -55],
+            ['0,55', 55],
             ['1,01', 101],
             ['1,2', 120],
             ['1,', 100],
